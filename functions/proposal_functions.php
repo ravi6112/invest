@@ -1208,14 +1208,7 @@ function dashboard_display(){
                                     <div class="btn-group" data-toggle="btn-toggle">';
                                     if($_SESSION['user_name'] ==$row[seeker] ){
 
-                                        echo'<span><button type="button" id="remove_'.$i.'" value="'.$row[ref_no].'" style="background:none!important;
-     color:blue;
-     border:none; 
-     padding:0!important;
-     font: inherit;
-     /*border is optional*/
-     border-bottom:0px solid #444; 
-     cursor: pointer;"  onclick="removeProposal(this.id,this.value)" >Remove</button></span>';
+                                        echo'<span><button type="button" id="remove_'.$i.'" value="'.$row[ref_no].'" style="background:none!important;color:blue;border:none;padding:0!important;font: inherit;/*border is optional*/border-bottom:0px solid #444; cursor: pointer;"  onclick="removeProposal(this.id,this.value)" >Remove</button></span>';
                                     }
                                     else{
                                         echo'<a href ="#" class="fa fa-flag">Report</a>';
