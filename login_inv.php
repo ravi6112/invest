@@ -1,4 +1,3 @@
-include 'functions/investor_functions.php';
 <?php
 include 'functions/advertisement_functions.php';
 require_once 'conf/smarty-conf.php';

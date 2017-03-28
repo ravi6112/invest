@@ -1,11 +1,7 @@
 {include file="header.tpl"}
 {include file="investor_navigation.tpl"}
 
-
-
-
-
-        <style>
+<style>
     .fa-thumbs-up{
         color:blue;
     }
