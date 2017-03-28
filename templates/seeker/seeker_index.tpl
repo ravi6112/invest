@@ -15,24 +15,16 @@
                 }
             });
         });
-            function removeProposal(id, ref_no) {
-                var login = document.getElementById("login_check").value;
+
+            function removeProposal(id,ref_no) {
                 console.log(ref_no);
-                if (login == 1) {
-                    $('#' + id).on("click", function () {
-                        $("#dialog").dialog("open");
-                        $("#remove_post").attr('action', 'proposal.php?job=invester&ref_no=' + ref_no);
-                    });
-                }
+                $('#' + id).on("click", function () {
+                    $("#dialog").dialog("open");
+                    $("#remove_post").attr('action', 'proposal.php?job=invester&ref_no='+ref_no);
+                });
             }
     </script>
 {/literal}
-
-<style>
-    .fa-thumbs-up{
-        color:blue;
-    }
-</style>
 
 <div id="dialog">
     <form id="remove_post"  action="proposal.php?job=invester&ref_no=" method="post">
@@ -42,6 +34,11 @@
     </form>
 </div>
 
+        <style>
+    .fa-thumbs-up{
+        color:blue;
+    }
+</style>
 <!-- Main content -->
     <div id="page-wrapper">
         <section class="content">
@@ -58,7 +55,7 @@
     </div>
 {literal}
     <script>
-//like function//
+
         function ajaxCall(id,refNo){
             var clas=$('#'+id+' i:first-child').attr('class');
             if(clas=='fa fa-thumbs-o-up'){
@@ -79,7 +76,6 @@
 
                 return;
             }
-            //dislike function//
             if(clas=='fa fa-thumbs-up'){
                 $('#'+id+' i:first-child').addClass('fa-thumbs-o-up');
                 $('#'+id+' i:first-child').removeClass('fa-thumbs-up');

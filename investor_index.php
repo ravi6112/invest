@@ -1,6 +1,9 @@
 <?php
 require_once 'conf/smarty-conf.php';
 include 'functions/advertisement_functions.php';
+include 'functions/proposal_functions.php';
+include 'functions/seeker_functions.php';
+include 'admin/functions/advertise_functions.php';
 
 if ($_SESSION['investor_login']==1){
 

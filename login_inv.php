@@ -2,7 +2,10 @@
 include 'functions/advertisement_functions.php';
 require_once 'conf/smarty-conf.php';
 include 'functions/investor_functions.php';
-include 'functions/job_functions.php';
+include 'functions/proposal_functions.php';
+include 'admin/functions/advertise_functions.php';
+include 'functions/seeker_functions.php';
+//include 'functions/job_functions.php';
 
 if ($_REQUEST['job']=="login"){
 

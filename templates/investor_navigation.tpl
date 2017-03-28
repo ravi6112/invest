@@ -1,82 +1,68 @@
-<style>
-<!--
-body {
-    padding-bottom: 40px;
-    padding-top: 60px;
-}
-
-.sidebar-nav-fixed {
-	width:20%;
-}
-
-
-
--->
-</style>
+<header class="main-header">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>I</b>.LK</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Invest</b>.LK</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
 
 
-<div class="navbar navbar-fixed-top navbar-default">
-  	<div class="container">
-      <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><img alt="logo" src="images/logo.png" width="55" height="30" style="float: left; margin-right: 10px; margin-top: -5px;">LOGO</a>
-        </div>
-        <!-- /.navbar-header -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
 
-        <ul class="nav navbar-top-links navbar-right">
-			<li class="dropdown">
-                <a  href="investor_index.php">
-                    <i class="fa fa-home fa-fw"></i>
-                </a>
-            </li>
-            
-            <li class="dropdown">
-                
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-					
-                    <li><a href="login_inv.php?job=logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                </ul>
-                <!-- /.dropdown-user -->
-            </li>
-            <!-- /.dropdown -->
         </ul>
-        <!--/.navbar-collapse -->
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="sidebar-nav-fixed affix">
-                <div style="border: none; border-right: 2px grey solid; margin-top: -10px; background-color: #f8f8f8;">
-                <ul class="nav" id="side-menu">
+      </div>
+    </nav>
+  </header>
 
-                    <li>
-                        <a href="investor_index.php"><i class="fa fa-dashboard fa-lg"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-pencil-square-o fa-lg"></i> Your Profile</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-eye fa-lg"></i> Search Proposal</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-smile-o fa-lg"></i> Settings</a>
-                    </li>
-                    
-
-                </ul>
-                </div>
-                <!--/.well -->
-            </div>
-            <!--/sidebar-nav-fixed -->
+    <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+            {php}display_profile_pic($_SESSION['user_name']);{/php}
         </div>
-        <!--/span-->
-        <div class="col-md-6">
+      </div>
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+        <li>
+            <a href="investor_index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-user"></i> <span>Profile</span></a>
+        </li>
+        <li>
+            <a href="investor_profile.php?job=edit_profile_pic"><i class="fa fa-image"></i> <span>Change Profile Picture</span></a>
+        </li>
+
+       
+
+        <li>
+            <a href="login_inv.php?job=logout"><i class="fa fa-sign-out"></i> <span>Logout</span></a>
+        </li>
+
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+<div class="content-wrapper">
+

@@ -155,6 +155,13 @@ if ($_SESSION['login']==1){
 		$smarty->assign('user_name', $_SESSION['user_name']);
 		$smarty->display('seeker/proposal_display.tpl');
 	}
+	 elseif ($_REQUEST['job']=="investor_view"){
+		$_SESSION['id']=$id=$_REQUEST['id'];
+
+		$smarty->assign('page','Post Job');
+		$smarty->assign('user_name', $_SESSION['user_name']);
+		$smarty->display('investor/proposal_display.tpl');
+	}
 	else{
 
 		$smarty->assign('page',"Proposal");
