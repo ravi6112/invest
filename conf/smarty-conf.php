@@ -7,3 +7,14 @@ $smarty = new Smarty;
 
 ini_set ('displayerrors', true);
 error_reporting (E_ALL + E_NOTICE);
+
+if($_SESSION['login']==1){
+    $smarty->assign('login', 1);
+    echo'<input type="hidden" id="login_check" value="1" />';
+}
+else{
+    echo'<input type="hidden" id="login_check" value="0" />';
+}
+
+$_SERVER['link_before']=$_SESSION['link'];
+$_SESSION['link'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";

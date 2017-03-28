@@ -1,12 +1,8 @@
 <?php
 require_once 'conf/smarty-conf.php';
 include 'functions/advertisement_functions.php';
-include 'functions/seeker_functions.php';
-include 'functions/proposal_functions.php';
-include 'admin/functions/advertise_functions.php';
-//include 'functions/advertisement_functions.php';
 
-if ($_SESSION['login']==1){
+if ($_SESSION['investor_login']==1){
 
 		$smarty->assign('page',"Welcome To Employer home.");
 		$smarty->display('investor/investor_index.tpl');
@@ -24,5 +20,3 @@ else{
 		$smarty->display('investor/login.tpl');
 	}
 }
-
-

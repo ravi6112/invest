@@ -1,17 +1,31 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.0.8, created on 2017-03-27 11:17:30
          compiled from "./templates/seeker/seeker_index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:51749692658d8a7726bb442-05690761%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+=======
+<?php /* Smarty version Smarty-3.0.8, created on 2017-03-27 15:36:13
+         compiled from "./templates/seeker/seeker_index.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:212977002958d8e415391fe7-92779637%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+>>>>>>> e8ed25033299f9dc23d2574ff41c1b5c28845d5c
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'cec59b1f7d8fc8b0448814530b4fac346b81f0e8' => 
     array (
       0 => './templates/seeker/seeker_index.tpl',
+<<<<<<< HEAD
       1 => 1490593645,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '51749692658d8a7726bb442-05690761',
+=======
+      1 => 1490609170,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '212977002958d8e415391fe7-92779637',
+>>>>>>> e8ed25033299f9dc23d2574ff41c1b5c28845d5c
   'function' => 
   array (
   ),
@@ -37,6 +51,7 @@ $_smarty_tpl->decodeProperties(array (
                 }
             });
         });
+<<<<<<< HEAD
 
             function removeProposal(id,ref_no) {
                 console.log(ref_no);
@@ -44,10 +59,30 @@ $_smarty_tpl->decodeProperties(array (
                     $("#dialog").dialog("open");
                     $("#remove_post").attr('action', 'proposal.php?job=invester&ref_no='+ref_no);
                 });
+=======
+            function removeProposal(id, ref_no) {
+                var login = document.getElementById("login_check").value;
+                console.log(ref_no);
+                if (login == 1) {
+                    $('#' + id).on("click", function () {
+                        $("#dialog").dialog("open");
+                        $("#remove_post").attr('action', 'proposal.php?job=invester&ref_no=' + ref_no);
+                    });
+                }
+>>>>>>> e8ed25033299f9dc23d2574ff41c1b5c28845d5c
             }
     </script>
 
 
+<<<<<<< HEAD
+=======
+<style>
+    .fa-thumbs-up{
+        color:blue;
+    }
+</style>
+
+>>>>>>> e8ed25033299f9dc23d2574ff41c1b5c28845d5c
 <div id="dialog">
     <form id="remove_post"  action="proposal.php?job=invester&ref_no=" method="post">
         <input type="radio"  name="invester" value="Got the Invester" checked required> Got The Invester<br>
@@ -56,11 +91,14 @@ $_smarty_tpl->decodeProperties(array (
     </form>
 </div>
 
+<<<<<<< HEAD
         <style>
     .fa-thumbs-up{
         color:blue;
     }
 </style>
+=======
+>>>>>>> e8ed25033299f9dc23d2574ff41c1b5c28845d5c
 <!-- Main content -->
     <div id="page-wrapper">
         <section class="content">
@@ -79,7 +117,11 @@ dashboard_display();<?php $_block_content = ob_get_clean(); $_block_repeat=false
     </div>
 
     <script>
+<<<<<<< HEAD
 
+=======
+//like function//
+>>>>>>> e8ed25033299f9dc23d2574ff41c1b5c28845d5c
         function ajaxCall(id,refNo){
             var clas=$('#'+id+' i:first-child').attr('class');
             if(clas=='fa fa-thumbs-o-up'){
@@ -100,6 +142,10 @@ dashboard_display();<?php $_block_content = ob_get_clean(); $_block_repeat=false
 
                 return;
             }
+<<<<<<< HEAD
+=======
+            //dislike function//
+>>>>>>> e8ed25033299f9dc23d2574ff41c1b5c28845d5c
             if(clas=='fa fa-thumbs-up'){
                 $('#'+id+' i:first-child').addClass('fa-thumbs-o-up');
                 $('#'+id+' i:first-child').removeClass('fa-thumbs-up');

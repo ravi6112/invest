@@ -320,13 +320,45 @@ function list_advertise(){
     include 'conf/config.php';
     include 'conf/opendb.php';
 
-    $result=mysqli_query($conn, "SELECT * FROM advertise");
+
+    $result=mysqli_query($conn, "SELECT * FROM advertise WHERE cancel_status='0'");
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     {
-        echo '  <h4 style="text-align: center"><strong>'.$row[title].'</strong></h4>
-                <h5>'.$row[text].'</h5>
-                <a href="https://'.$row[url].'"><img src="admin/'.$row[image].'" href="'.$row[url].'" alt =" ads on koders" style="width: 6.6cm;"/></a>';
+        echo '  <div class="row">
+                    <div class="col-lg-10">
+                        <h4 style="text-align: center"><strong>'.$row[title].' </strong></h4>
+                    </div>
+                    
+                    <div class="col-lg-2" style="margin-top: 10px;">
+                       <a href="advertise.php?job=ad_delete&id='.$row[id].'"><i class="fa fa-times fa-x"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h5>'.$row[text].'</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="https://'.$row[url].'"><img src="admin/'.$row[image].'" href="'.$row[url].'" alt =" ads on koders" style="width: 6.6cm;"/></a>
+                    </div>
+                </div>';
     }
 
     include 'conf/closedb.php';
 }
+
+function ad_delete($id){
+    include 'conf/config.php';
+    include 'conf/opendb.php';
+
+
+    $query = "UPDATE advertise SET
+	cancel_status='1' 
+	WHERE id='$id'";
+
+	mysqli_query($conn, $query);
+
+	include 'conf/closedb.php';
+} 
+    

@@ -1208,7 +1208,7 @@ function dashboard_display(){
                                     <div class="btn-group" data-toggle="btn-toggle">';
                                     if($_SESSION['user_name'] ==$row[seeker] ){
 
-                                        echo'<span><button href="#" id="remove_'.$i.'" value="'.$row[ref_no].'"  onclick="removeProposal(remove_'.$i.','.$row[ref_no].')" >Remove</button></span>';
+                                        echo'<span><button type="button" id="remove_'.$i.'" value="'.$row[ref_no].'" style="background:none!important;color:blue;border:none;padding:0!important;font: inherit;/*border is optional*/border-bottom:0px solid #444; cursor: pointer;"  onclick="removeProposal(this.id,this.value)" >Remove</button></span>';
                                     }
                                     else{
                                         echo'<a href ="#" class="fa fa-flag">Report</a>';
@@ -1231,86 +1231,10 @@ function dashboard_display(){
                                         <img class="attachment-img" src="' . $row[cover_image] . '" alt="Attachment Image">
                         
                                         <div class="attachment-pushed">
-                                            <h4 class="attachment-heading"> ' . $row[title] . '</h4>
+                                            <h4 class="attachment-heading"><strong> ' . $row[title] . '</strong></h4>
                         
                                             <div class="attachment-text" style="margin-top: -5px;">
                                                 <h4>' . substr($row[detail], 0, 180) . ' <a href="proposal.php?job=view&id=' . $row[ref_no] . '">more</a></div></h4>
-                                            </div>
-                                          <!-- /.attachment-text -->
-                                        </div>
-                                        <!-- /.attachment-pushed -->
-                                    </div>
-                                    <div class="box-body">
-                                     <button type = "button" class="btn btn-default btn-xs" id="btn_'.$i.'" onclick="ajaxCall(this.id,this.value)" name="btn" value="'.$row[ref_no].'"  >';
-
-                                        if(check_like_status($_SESSION['user_name'], $row['ref_no'])==1){
-                                            echo'<i class="fa fa-thumbs-up" ></i >';
-                                        }
-                                        else{
-                                            echo'<i class="fa fa-thumbs-o-up" ></i >';
-                                        }
-
-                                        echo'<span>'.$like_count.'</span></button >
-                                    </div>
-                
-                                </div>
-                            </div>
-                        </div>
-                       
-                        ';
-            $i+=1;
-        }
-                   echo' </section>
-                </div>';
-
-
-}
-
-
-function investor_dashboard_display(){
-    include 'conf/config.php';
-    include 'conf/opendb.php';
-
-    $i=0;
-        $result=mysqli_query($conn, "SELECT * FROM proposal WHERE cancel_status='0'");
-        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-            $info = get_user_info_by_seeker($row[seeker]);
-            $like_count=get_like_count($row[ref_no], 1);
-
-            echo '
-                        <div class="row">
-                    <section class="col-lg-7 connectedSortable" style="width: 76%;">
-                        <div class="box box-success">
-                            <div class="box-header">
-                                <i class="fa fa-file"></i>
-            
-                                <h3 class="box-title">Proposals</h3>
-            
-                                <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-                                    <div class="btn-group" data-toggle="btn-toggle">
-                                   
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-body chat" id="chat-box">
-                                <!-- chat item -->
-                                <div class="item">
-                                    <img src="' . $info[profile_pic] . '" alt="user image" class="online">
-            
-                                    <p class="message">
-                                        <a href="#" class="name">
-                                                ' . $row[seeker] . '
-                                        </a><br/>
-                                        <p></p>
-                                    </p>
-                                    <div class="attachment-block clearfix">
-                                        <img class="attachment-img" src="' . $row[cover_image] . '" alt="Attachment Image">
-                        
-                                        <div class="attachment-pushed">
-                                            <h4 class="attachment-heading">' . $row[title] . '</h4>
-                        
-                                            <div class="attachment-text" style="margin-top: -5px;">
-                                                <h4>' . substr($row[detail], 0, 180) . ' <a href="proposal.php?job=investor_view&id=' . $row[ref_no] . '">more</a></div></h4>
                                             </div>
                                           <!-- /.attachment-text -->
                                         </div>
