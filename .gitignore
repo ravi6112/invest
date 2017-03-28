@@ -1,2 +1,5 @@
 /conf/**
 /templates_c/**
+/ajax/conf/**
+/admin/conf/**
+/admin/templates_c/**
