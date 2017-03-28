@@ -37,6 +37,9 @@ elseif ($_REQUEST['job']=="logout"){
 	unset($_SESSION['login']);
 	unset($_SESSION['user_name']);
 	unset($_SESSION['user_id']);
+	unset($_SESSION['email']);
+	unset($_SESSION['full_name']);
+	
 	
 	header('location: index.php');
 

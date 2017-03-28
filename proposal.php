@@ -5,7 +5,7 @@ include 'functions/proposal_functions.php';
 include 'functions/upload_functions.php';
 include 'functions/advertisement_functions.php';
 
-if ($_SESSION['login']==1){
+if ($_SESSION['login']==1 || $_SESSION['investor_login']==1 ){
 	
 	if ($_REQUEST['job']=="create"){
 		unset($_SESSION['ref_no']);

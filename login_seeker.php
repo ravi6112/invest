@@ -36,7 +36,7 @@ elseif ($_REQUEST['job']=="logout"){
 	unset($_SESSION['user_name']);
 	unset($_SESSION['user_id']);
 
-    $smarty->display('seeker/login.tpl');
+    header('location: index.php');
 
 }
 
