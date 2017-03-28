@@ -20,6 +20,8 @@ if ($_REQUEST['job']=="login"){
 		$_SESSION['full_name']=$user_info['full_name'];
 		$_SESSION['email']=$user_info['email'];
 
+        $smarty->assign('color', $color);
+
 		$smarty->assign('user_name', $_SESSION['user_name']);
 		$smarty->display('investor/investor_index.tpl');
 	}
@@ -42,6 +44,14 @@ elseif ($_REQUEST['job']=="logout"){
 	
 	
 	header('location: index.php');
+
+}
+elseif($_REQUEST['job']=='color'){
+    $_SESSION['skin']=$skin=$_REQUEST['skin'];
+    color_change($skin);
+
+    $smarty->assign('color',"$skin");
+    $smarty->display('investor/login.tpl');
 
 }
 

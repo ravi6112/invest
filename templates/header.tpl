@@ -82,6 +82,8 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <![endif]-->
 
+
 </head>
-<body class="hold-transition skin-light-red sidebar-mini">
+<body  class="hold-transition skin-{$color} sidebar-mini">
+
 <div class="wrapper">

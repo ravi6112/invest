@@ -198,3 +198,19 @@ function save_home_page($user_name, $title, $sub_title, $detail, $logo){
 
 	include 'conf/closedb.php';
 }
+
+function color_change($skin){
+    include 'conf/config.php';
+    include 'conf/opendb.php';
+
+    $query = "UPDATE investor SET
+	theme='$skin',
+	sub_title='$sub_title',
+	logo='$logo',
+	detail='$detail'
+	WHERE user_name='$user_name'";
+
+    mysqli_query($conn, $query);
+
+    include 'conf/closedb.php';
+}
