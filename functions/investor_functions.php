@@ -224,3 +224,4 @@ function get_color_info($user_name){
     }
     include 'conf/closedb.php';
 }
+

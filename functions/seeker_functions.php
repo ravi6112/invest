@@ -458,3 +458,28 @@ function list_users($keyword_for_search, $qual_for_search, $experience, $languag
 
 	include 'conf/closedb.php';
 }
+
+function color_change_seeker($skin,$user_name){
+    include 'conf/config.php';
+    include 'conf/opendb.php';
+
+    $query = "UPDATE user SET
+	theme='$skin'
+	WHERE user_name='$user_name'";
+
+    mysqli_query($conn, $query);
+
+    include 'conf/closedb.php';
+}
+
+function get_color_info_seeker($user_name){
+    include 'conf/config.php';
+    include 'conf/opendb.php';
+
+    $result=mysqli_query($conn, "SELECT * FROM user WHERE user_name='$user_name'");
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+    {
+        return $row;
+    }
+    include 'conf/closedb.php';
+}

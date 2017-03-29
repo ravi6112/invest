@@ -18,6 +18,9 @@ if ($_REQUEST['job']=="login"){
 		$_SESSION['full_name']=$user_info['full_name'];
 		$_SESSION['email']=$user_info['email'];
 
+        $info=get_color_info_seeker($_SESSION['user_name']);
+        $smarty->assign('color', $info['theme']);
+
 		$smarty->assign('user_name', $_SESSION['user_name']);
 		$smarty->display('seeker/seeker_index.tpl');
 	}
@@ -39,7 +42,15 @@ elseif ($_REQUEST['job']=="logout"){
     header('location: index.php');
 
 }
+elseif($_REQUEST['job']=='color'){
+    $_SESSION['skin']=$skin=$_REQUEST['skin'];
+    $user_name=$_SESSION['user_name'];
+    color_change_seeker($skin,$user_name);
 
+    $smarty->assign('color',"$skin");
+    $smarty->display('seeker/seeker_index.tpl');
+
+}
 else{
 		$smarty->display('seeker/login.tpl');
 }
