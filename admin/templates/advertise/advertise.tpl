@@ -11,36 +11,36 @@
                             <div class="col-lg-12" align="center">
                                 <h2><strong>Advertisement Post </strong></h2>
                             </div>
-            
+
                             <form role="form" action="advertise.php?job=add" method="post" class="product" enctype="multipart/form-data">
                                 <div class="row" style="margin-bottom: 10px; margin-left: 20px;">
                                     <div class="row" style="margin-bottom: 10px;">
                                         <div class="col-lg-3">Company Name: </div>
-            
+
                                         <div class="col-lg-6">
                                             <input class="form-control" name="company_name"  value="{$company_name}" placeholder="Company Name">
                                         </div>
                                     </div>
-            
+
                                     <div class="row" style="margin-bottom: 10px;">
                                         <div class="col-lg-3">Title: </div>
-            
+
                                         <div class="col-lg-6">
                                             <input class="form-control" name="title" value="{$title}"  placeholder="Title">
                                         </div>
                                     </div>
-            
+
                                     <div class="row" style="margin-bottom: 10px;">
                                         <div class="col-lg-3">Text : </div>
-            
+
                                         <div class="col-lg-6">
                                             <input class="form-control" name="text" value="{$text}"  placeholder="Text">
                                         </div>
                                     </div>
-            
+
                                     <div class="row" style="margin-bottom: 10px;">
                                         <div class="col-lg-3">Image : </div>
-            
+
                                         <div class="col-lg-6">
                                             <input id="file-1" name="image" type="file" class="file" data-overwrite-initial="false" data-min-file-count="1">
                                         </div>
@@ -53,10 +53,10 @@
                                             <input class="form-control" name="url" value="{$url}"  placeholder="Website">
                                         </div>
                                     </div>
-            
+
                                     <div class="row" style="margin-bottom: 10px;">
                                         <div class="col-lg-3">Staring Date : </div>
-            
+
                                         <div class="col-lg-2">
                                             <input type="text" class="form-control" id="datepicker1" name="start_date" value="{$start_date}" placeholder="Starting Date">
                                         </div>
@@ -64,18 +64,18 @@
                                     </div>
                                     <div class="row" style="margin-bottom: 10px;">
                                         <div class="col-lg-3">Ending Date : </div>
-            
+
                                         <div class="col-lg-2">
                                             <input type="text" class="form-control" id="datepicker2" name="end_date" value="{$end_date}" placeholder="ending Date">
                                         </div>
                                         <div class="col-lg-7"></div>
                                     </div>
-            
+
                                     <div class="row" style="margin-left: 20px;">
                                         <div class="col-lg-2">
                                             {if $edit_mode=='on'}
                                             <button type="submit" name="ok" value="Update" class="btn btn-block btn-success btn-lg">Update</button>
-            
+
                                             {else}
                                             <button type="submit" name="ok" value="Save" class="btn btn-block btn-success btn-lg">Save</button>
                                         </div>
