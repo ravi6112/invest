@@ -17,7 +17,6 @@
         });
 
             function removeProposal(id,ref_no) {
-                console.log(ref_no);
                 $('#' + id).on("click", function () {
                     $("#dialog").dialog("open");
                     $("#remove_post").attr('action', 'proposal.php?job=invester&ref_no='+ref_no);
